@@ -1,0 +1,77 @@
+### Yamaha
+POST http://localhost:8080/motos
+Content-Type: application/json
+
+{
+  "marque": "Yamaha",
+  "modele": "MT-07",
+  "kilometrage": 10000
+}
+
+### Honda
+POST http://localhost:8080/motos
+Content-Type: application/json
+
+{
+  "marque": "Honda",
+  "modele": "Africa Twin",
+  "kilometrage": 5000
+}
+
+### Filtre toutes motos
+GET http://localhost:8080/motos
+
+### Filtre seulement Honda
+GET http://localhost:8080/motos/marque/Honda
+
+### Mise a jour Honda
+PUT http://localhost:8080/motos/1
+Content-Type: application/json
+
+{
+  "marque": "Honda",
+  "modele": "Africa Twin",
+  "kilometrage": 15000
+}
+
+### Moto avec km < 10 000
+GET http://localhost:8080/motos/2/revision
+
+
+### Moto avec KM < 0
+POST http://localhost:8080/motos
+Content-Type: application/json
+
+{
+  "marque": "",
+  "modele": "Ninja",
+  "kilometrage": -500
+}
+
+### Ajout vidange moto 1
+POST http://localhost:8080/motos/1/entretiens
+Content-Type: application/json
+
+{
+  "date": "2026-03-21",
+  "kilometrageMoto": 10000,
+  "typeIntervention": "VIDANGE",
+  "notes": "Changement filtre à huile + Motul 10W40"
+}
+
+### Ajout liquide_frein moto 1
+POST http://localhost:8080/motos/1/entretiens
+Content-Type: application/json
+
+{
+"date": "2026-02-21",
+"kilometrageMoto": 10000,
+"typeIntervention": "LIQUIDE_FREIN",
+"notes": "Changement de liquide de frein + Ipone"
+}
+
+###
+DELETE http://localhost:8080/motos/1
+
+###
+GET http://localhost:8080/motos/1/entretiens
