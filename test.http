@@ -15,7 +15,7 @@ Content-Type: application/json
 {
   "marque": "Honda",
   "modele": "Africa Twin",
-  "kilometrage": 5000
+  "kilometrage": 25000
 }
 
 ### Filtre toutes motos
@@ -43,7 +43,7 @@ POST http://localhost:8080/motos
 Content-Type: application/json
 
 {
-  "marque": "",
+  "marque": "Kawasaki",
   "modele": "Ninja",
   "kilometrage": -500
 }
@@ -53,7 +53,7 @@ POST http://localhost:8080/motos/1/entretiens
 Content-Type: application/json
 
 {
-  "date": "2026-03-21",
+  "date": "2025-01-01",
   "kilometrageMoto": 10000,
   "typeIntervention": "VIDANGE",
   "notes": "Changement filtre à huile + Motul 10W40"
@@ -64,14 +64,14 @@ POST http://localhost:8080/motos/1/entretiens
 Content-Type: application/json
 
 {
-"date": "2026-02-21",
-"kilometrageMoto": 10000,
-"typeIntervention": "LIQUIDE_FREIN",
-"notes": "Changement de liquide de frein + Ipone"
+  "date": "2023-02-21",
+  "kilometrageMoto": 10000,
+  "typeIntervention": "LIQUIDE_FREIN",
+  "notes": "Vieux liquide tout marron"
 }
 
 ###
 DELETE http://localhost:8080/motos/1
 
 ###
-GET http://localhost:8080/motos/1/entretiens
+GET http://localhost:8080/motos/1/bilan

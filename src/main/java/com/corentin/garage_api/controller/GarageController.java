@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class GarageController {
 
     private final MotoService motoService;
@@ -57,5 +58,10 @@ public class GarageController {
     @GetMapping("/motos/{id}/entretiens")
     public List<Entretien> recupererEntretien(@PathVariable Long id) {
         return this.motoService.recupererEntretiens(id);
+    }
+
+    @GetMapping("/motos/{id}/bilan")
+        public List<String> consulterBilan(@PathVariable Long id) {
+            return this.motoService.genererBilan(id);
     }
 }
